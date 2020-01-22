@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image1: MyString
+  image2: MyString
+  image3: MyString
+  point: MyText
+  result: MyText
+  appeal: MyString
+  user: one
+  store: one
+  product: one
+
+two:
+  image1: MyString
+  image2: MyString
+  image3: MyString
+  point: MyText
+  result: MyText
+  appeal: MyString
+  user: two
+  store: two
+  product: two
