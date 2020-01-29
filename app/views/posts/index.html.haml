@@ -1,2 +1,36 @@
-%h1 Posts#index
-%p Find me in app/views/posts/index.html.haml
+%header
+  .header-contents
+    .header-contents__home-btn
+      =icon('fas', 'home')
+      HOME
+    .header-contents__side
+      .header-contents__side--user-btn
+        = icon('fas', 'user')
+        ユーザー名
+      .header-contents__side--post-btn
+        = icon('fas', 'pen')
+        投稿する
+.wrapper
+  .search-form
+    %input.search-form__text-box{type: 'text'}
+    %input.search-form__submit-btn{type: 'submit', value: '検索'}
+  .contents
+    .contents__product-name
+      りんご
+    .contents__image
+      = link_to '/posts/show' do
+        = image_tag("http://placehold.it/660x400")
+    .contents__appeal
+      売上金額全店１位！
+    .contents__contributor
+      店舗/ユーザー名
+  .contents
+    .contents__product-name
+      りんご
+    .contents__image
+      = link_to '/posts/show' do
+        = image_tag("http://placehold.it/660x400")
+    .contents__appeal
+      売上金額全店１位！
+    .contents__contributor
+      店舗/ユーザー名
