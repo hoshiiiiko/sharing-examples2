@@ -1,20 +1,10 @@
-%header
-  .header-contents
-    .header-contents__home-btn
-      =icon('fas', 'home')
-      HOME
-    .header-contents__side
-      .header-contents__side--user-btn
-        = icon('fas', 'user')
-        ユーザー名
-      .header-contents__side--post-btn
-        = icon('fas', 'pen')
-        投稿する
+= render 'header'
+
 .wrapper
   .search-form
     %input.search-form__text-box{type: 'text'}
     %input.search-form__submit-btn{type: 'submit', value: '検索'}
-  .contents
+  .contents.index
     .contents__product-name
       りんご
     .contents__image
@@ -24,7 +14,7 @@
       売上金額全店１位！
     .contents__contributor
       店舗/ユーザー名
-  .contents
+  .contents.index
     .contents__product-name
       りんご
     .contents__image

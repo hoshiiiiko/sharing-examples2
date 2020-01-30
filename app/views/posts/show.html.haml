@@ -1,2 +1,46 @@
-%h1 Posts#show
-%p Find me in app/views/posts/show.html.haml
+= render 'header'
+.wrapper
+  .title
+    .title__product-name
+      りんご
+    .title__contributor
+      店舗名／ユーザー名
+  .contents.show-contents
+    .show-contents__images
+      .show-contents__images--main
+        = image_tag("http://placehold.it/660x400")
+      .show-contents__images--sub
+        = image_tag("http://placehold.it/330x190")
+        = image_tag("http://placehold.it/330x190")
+    .show-contents__point
+      ＜ポイント＞
+      %br
+      品種の特徴を説明するPOPを取り付けて、お客様にわかりやすい売り場を実現しました。
+      ６玉498円の袋をメインとして展開することで単価アップに成功しました。
+    .show-contents__result
+      ＜実績＞
+      %br
+      売上金額：230千円（全店１位）
+      PI金額：10890円（全店３位）
+      販売期間：1/27〜2/2
+    .show-contents__appeal
+      売上金額全店１位！！
+  .comments
+    .comments__like-btn
+      =icon('far', 'thumbs-up')
+      %input{type: 'submit', value: 'いいね！'}
+    .comments__form
+      %input.comments__form--text-box{type: 'text', value: 'コメントする'}
+      %input.comments__form--submit-btn{type: 'submit', value: 'SEND'}
+    .comments__comment
+      .comments__comment--user-name
+        ユーザー名：
+      .comments__comment--text
+        すごいですね！
+    .comments__comment
+      .comments__comment--user-name
+        ユーザー名：
+      .comments__comment--text
+        すごいですね！
+
+
