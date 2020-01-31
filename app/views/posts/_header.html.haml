@@ -1,12 +1,11 @@
 %header
   .header-contents
-    .header-contents__home-btn
-      =icon('fas', 'home')
-      HOME
+    .header-contents__user-btn
+      = icon('fas', 'user')
+      ユーザー名
     .header-contents__side
-      .header-contents__side--user-btn
-        = icon('fas', 'user')
-        ユーザー名
-      .header-contents__side--post-btn
+      .header-contents__side--btn
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      .header-contents__side--btn
         = icon('fas', 'pen')
         投稿する
