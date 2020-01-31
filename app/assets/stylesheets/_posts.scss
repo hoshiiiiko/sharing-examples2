@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+html, head, body {
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #D8D8D8;
+  .header-contents {
+    @include center;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    &__home-btn {
+      color: #666;
+    }
+    &__side {
+      display: flex;
+      align-items: center;
+      &--user-btn {
+        padding-right: 10px;
+        color: #666;
+        font-size: 14px;
+      }
+      &--post-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+        border: 2px solid #57C3E9;
+        color: #57C3E9;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: #f5f5f3;
+  overflow: scroll;
+}
+
+.search-form {
+  @include center;
+  padding: 10px;
+  margin-top: 30px;
+  &__text-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 430px;
+    height: 46px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-family: "游ゴシック"
+  }
+  &__submit-btn {
+    margin-right: 20px;
+    width: 140px;
+    height: 47px;
+    background-color: #57C3E9;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+  }
+}
+.index {
+  margin-top: 30px;
+}
+.contents {
+  @include center;
+  position: relative;
+  &__product-name {
+    position: absolute;
+    margin: 10px;
+    padding: 5px;
+    font-size: 1.8rem;
+    color: #666;
+    background-color: #fff;
+  }
+  &__appeal {
+    padding-left: 20px;
+    font-size: 2.2rem;
+    position: absolute;
+    bottom: 18px;
+  }
+  &__contributor {
+    height: 15px;
+    margin-right: 5px;
+    text-align: right;
+    color: #666;
+  }
+}
+
+.title {
+  @include center;
+  height: 60px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__product-name {
+    font-size: 1.6rem;
+    padding-left: 10px;
+    color: #666;
+  }
+  &__contributor {
+    padding-right: 10px;
+    font-size: 1rem;
+    color: #666;
+  }
+}
+
+.show-contents {
+  &__images {
+    &--main {
+      border: 1px solid #666;
+    }
+    &--sub {
+      display: flex;
+      border: 1px solid #666;
+    }
+  }
+  &__point {
+    background-color: #FFFFFF;
+    color: #444;
+    padding-top: 10px;
+  }
+  &__result {
+    background-color: #FFFFFF;
+    color: #444;
+    padding-top: 10px;
+  }
+  &__appeal {
+    background-color: #FFFFFF;
+    font-size: 2.3rem;
+    text-align: center;
+    border: 1px solid #666;
+  }
+}
+
+.comments {
+  @include center;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41,41,41,0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
