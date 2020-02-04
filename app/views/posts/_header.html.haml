@@ -12,5 +12,6 @@
       .header-contents__right--btn
         = link_to "ログアウト", destroy_user_session_path, method: :delete
       .header-contents__right--btn
-        = icon('fas', 'pen')
-        投稿する
+        = link_to new_post_path do
+          = icon('fas', 'pen')
+          投稿する
