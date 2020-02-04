@@ -16,19 +16,21 @@ header {
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    &__home-btn {
-      color: #666;
-    }
-    &__side {
+    &__left {
       display: flex;
       align-items: center;
-      &--user-btn {
+      &--btn {
+        padding-left: 2px;
         padding-right: 10px;
         color: #666;
-        font-size: 14px;
       }
-      &--post-btn {
-        padding: 8px 20px;
+    }
+    &__right {
+      display: flex;
+      align-items: center;
+      &--btn {
+        margin-left: 10px;
+        padding: 8px 15px;
         font-size: 14px;
         border: 2px solid #57C3E9;
         color: #57C3E9;
