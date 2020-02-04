@@ -1,11 +1,16 @@
 %header
   .header-contents
-    .header-contents__user-btn
-      = icon('fas', 'user')
-      ユーザー名
-    .header-contents__side
-      .header-contents__side--btn
+    .header-contents__left
+      .header-contents__left--btn
+        = link_to root_path do
+          = icon('fas', 'home')
+          HOME
+      .header-contents__left--btn
+        = icon('fas', 'user')
+        = current_user.name
+    .header-contents__right
+      .header-contents__right--btn
         = link_to "ログアウト", destroy_user_session_path, method: :delete
-      .header-contents__side--btn
+      .header-contents__right--btn
         = icon('fas', 'pen')
         投稿する

@@ -16,10 +16,16 @@ header {
     padding: 10px;
     justify-content: space-between;
     align-items: center;
-    &__user-btn {
-      color: #666;
+    &__left {
+      display: flex;
+      align-items: center;
+      &--btn {
+        padding-left: 2px;
+        padding-right: 10px;
+        color: #666;
+      }
     }
-    &__side {
+    &__right {
       display: flex;
       align-items: center;
       &--btn {
