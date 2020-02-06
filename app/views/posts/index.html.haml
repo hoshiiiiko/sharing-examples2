@@ -1,9 +1,10 @@
 = render 'header'
 
 .wrapper
-  .search-form
-    %input.search-form__text-box{type: 'text'}
-    %input.search-form__submit-btn{type: 'submit', value: '検索'}
+  = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+    = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-form__text-box"
+    = form.submit "検索", class: "search-form__submit-btn"
+
   - @posts.each do |post|
     .contents.index
       .contents__product-name
