@@ -10,8 +10,10 @@ class Post < ApplicationRecord
 
   validates :product_name, :image1, :point, :result, :appeal, presence: true
   
-  validates_acceptance_of :confirming
+  validates_acceptance_of :confirming, allow_nil: false
   after_validation :check_confirming
+
+  mount_uploader :image1, :image2, :image3, ImageUploader
 
   def check_confirming
     errors.delete(:confirming)
