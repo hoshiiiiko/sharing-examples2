@@ -6,8 +6,9 @@
           = icon('fas', 'home')
           HOME
       .header-contents__left--btn
-        = icon('fas', 'user')
-        = current_user.name
+        = link_to "/users/#{current_user.id}" do
+          = icon('fas', 'user')
+          = current_user.name
     .header-contents__right
       .header-contents__right--btn
         = link_to "ログアウト", destroy_user_session_path, method: :delete
