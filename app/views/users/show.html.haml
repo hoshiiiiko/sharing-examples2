@@ -1,2 +1,11 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+= render 'posts/header'
+
+- @posts.each do |post|
+  .contents.index
+    .contents__product-name
+      = post.product_name
+    .contents__image
+      = link_to "/posts/#{post.id}" do
+        = image_tag post.image1.url(:thumb)
+    .contents__appeal
+      = post.appeal
