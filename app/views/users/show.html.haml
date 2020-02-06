@@ -1,0 +1,13 @@
+= render 'posts/header'
+
+.index_posts
+  ＜投稿一覧＞
+- @posts.each do |post|
+  .contents.index
+    .contents__product-name
+      = post.product_name
+    .contents__image
+      = link_to "/posts/#{post.id}" do
+        = image_tag post.image1.url(:thumb)
+    .contents__appeal
+      = post.appeal
