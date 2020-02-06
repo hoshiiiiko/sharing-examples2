@@ -1,2 +1,22 @@
-%h1
-  posts#new
+= render 'header'
+.post-form
+  = form_with(model: @post, local: true) do |form|
+    商品名：
+    = form.text_field :product_name, placeholder: '商品名'
+    %br
+    売場写真：
+    = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image1'
+    = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image2'
+    = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image3'
+    %br
+    工夫したポイント：
+    = form.text_area :point, placeholder: '工夫したポイントなど', id: 'point'
+    %br
+    実績：
+    = form.text_area :result, placeholder: '販売期間と実績（売上金額、PI値、ロス率、他店比較など）', id: 'result'
+    %br
+    アピール文：
+    = form.text_field :appeal, placeholder: 'アピール文（例）売上全店１位！', id: 'appeal'
+    %br
+    = form.submit '提出する'
+    
