@@ -21,4 +21,9 @@ class Post < ApplicationRecord
     errors.delete(:confirming)
     self.confirming = errors.empty? ? '1' : ''
   end
+
+  def self.search(search)
+    return Post.all unless search
+    Post.where('product_name LIKE(?)', "%#{search}%")
+  end
 end
