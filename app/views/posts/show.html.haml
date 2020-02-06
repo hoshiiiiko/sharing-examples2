@@ -27,17 +27,14 @@
       =icon('far', 'thumbs-up')
       %input{type: 'submit', value: 'いいね！'}
     .comments__form
-      %input.comments__form--text-box{type: 'text', value: 'コメントする'}
-      %input.comments__form--submit-btn{type: 'submit', value: 'SEND'}
+      = form_with(model: [@post, @comment], local: true) do |form|
+        = form.text_area :content, placeholder: "コメントする", rows: "4"
+        = form.submit "SEND"
     .comments__comment
-      .comments__comment--user-name
-        ユーザー名：
-      .comments__comment--text
-        すごいですね！
-    .comments__comment
-      .comments__comment--user-name
-        ユーザー名：
-      .comments__comment--text
-        すごいですね！
-
+      - if @comments
+        - @comments.each do |comment|
+          .comments__comment--user-name
+            = comment.user.name
+          .comments__comment--text
+            = comment.content
 
