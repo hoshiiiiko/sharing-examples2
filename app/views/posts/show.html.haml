@@ -4,6 +4,8 @@
     .title__product-name
       = @post.product_name
     .title__contributor
+      = @post.user.store.name
+      店/
       = @post.user.name
   .contents.show-contents
     .show-contents__images
