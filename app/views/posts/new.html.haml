@@ -1,0 +1,59 @@
+= render 'header'
+
+= form_with(model: @post, local: true) do |form|
+  - if @post.confirming.blank?
+    .post-form
+      商品名：
+      = form.text_field :product_name, placeholder: '商品名'
+      %br
+      売場写真：
+      = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image1'
+      = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image2'
+      = form.file_field :image3, accept: "image/png, image/jpeg", id: 'image3'
+      %br
+      工夫したポイント：
+      = form.text_area :point, placeholder: '工夫したポイントなど', id: 'point'
+      %br
+      実績：
+      = form.text_area :result, placeholder: '販売期間と実績（売上金額、PI値、ロス率、他店比較など）', id: 'result'
+      %br
+      アピール文：
+      = form.text_field :appeal, placeholder: 'アピール文（例）売上全店１位！', id: 'appeal'
+      %br
+      = form.submit '確認画面へ'
+  - else
+    %p.comfirm
+      以下の内容でよろしいですか？
+      .title
+        .title__product-name
+          = @post.product_name
+        .title__contributor
+          = @post.user.name
+      .contents.show-contents
+        .show-contents__images
+          .show-contents__images--main
+            = image_tag @post.image1.url
+          .show-contents__images--sub
+            = image_tag @post.image2.url
+            = image_tag @post.image3.url
+        .show-contents__point
+          ＜ポイント＞
+          %br
+          = @post.point
+        .show-contents__result
+          ＜実績＞
+          %br
+          = @post.result
+        .show-contents__appeal
+          = @post.appeal
+      .form-inputs
+        = form.hidden_field :product_name
+        = form.hidden_field :image1_cache
+        = form.hidden_field :image2_cache
+        = form.hidden_field :image3_cache
+        = form.hidden_field :point
+        = form.hidden_field :result
+        = form.hidden_field :appeal
+      .form-actions
+        = form.submit '送信する'
+    = form.hidden_field :confirming
