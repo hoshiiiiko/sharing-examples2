@@ -1,22 +1,50 @@
 = render 'header'
-.post-form
-  = form_with(model: @post, local: true) do |form|
-    商品名：
-    = form.text_field :product_name, placeholder: '商品名'
-    %br
-    売場写真：
-    = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image1'
-    = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image2'
-    = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image3'
-    %br
-    工夫したポイント：
-    = form.text_area :point, placeholder: '工夫したポイントなど', id: 'point'
-    %br
-    実績：
-    = form.text_area :result, placeholder: '販売期間と実績（売上金額、PI値、ロス率、他店比較など）', id: 'result'
-    %br
-    アピール文：
-    = form.text_field :appeal, placeholder: 'アピール文（例）売上全店１位！', id: 'appeal'
-    %br
-    = form.submit '提出する'
-    
+
+- if @post.confirming.blank?
+  .post-form
+    = form_with(model: @post, local: true) do |form|
+      商品名：
+      = form.text_field :product_name, placeholder: '商品名'
+      %br
+      売場写真：
+      = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image1'
+      = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image2'
+      = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image3'
+      %br
+      工夫したポイント：
+      = form.text_area :point, placeholder: '工夫したポイントなど', id: 'point'
+      %br
+      実績：
+      = form.text_area :result, placeholder: '販売期間と実績（売上金額、PI値、ロス率、他店比較など）', id: 'result'
+      %br
+      アピール文：
+      = form.text_field :appeal, placeholder: 'アピール文（例）売上全店１位！', id: 'appeal'
+      %br
+      = form.submit '確認画面へ'
+- else
+  %p.comfirm
+    以下の内容でよろしいですか？
+    .title
+      .title__product-name
+        = @post.product_name
+      .title__contributor
+        = @post.user.name
+    .contents.show-contents
+      .show-contents__images
+        .show-contents__images--main
+          = @post.image1
+        .show-contents__images--sub
+          = @post.image2
+          = image_tag("http://placehold.it/330x190")
+      .show-contents__point
+        ＜ポイント＞
+        %br
+        = @post.point
+      .show-contents__result
+        ＜実績＞
+        %br
+        = @post.result
+      .show-contents__appeal
+        = @post.appeal
+    = from.submit '提出する'
+      
