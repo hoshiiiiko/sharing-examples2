@@ -4,23 +4,14 @@
   .search-form
     %input.search-form__text-box{type: 'text'}
     %input.search-form__submit-btn{type: 'submit', value: '検索'}
-  .contents.index
-    .contents__product-name
-      りんご
-    .contents__image
-      = link_to '/posts/show' do
-        = image_tag("http://placehold.it/660x400")
-    .contents__appeal
-      売上金額全店１位！
-    .contents__contributor
-      店舗/ユーザー名
-  .contents.index
-    .contents__product-name
-      りんご
-    .contents__image
-      = link_to '/posts/show' do
-        = image_tag("http://placehold.it/660x400")
-    .contents__appeal
-      売上金額全店１位！
-    .contents__contributor
-      店舗/ユーザー名
+  - @posts.each do |post|
+    .contents.index
+      .contents__product-name
+        = post.product_name
+      .contents__image
+        = link_to "/posts/#{post.id}" do
+          = image_tag post.image1.url(:thumb)
+      .contents__appeal
+        = post.appeal
+      .contents__contributor
+        = post.user.name
