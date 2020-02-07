@@ -18,10 +18,15 @@ class User < ApplicationRecord
     end 
   end
 
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
+
   has_many :posts
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :store
 end
