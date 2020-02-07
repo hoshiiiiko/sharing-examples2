@@ -34,6 +34,10 @@
         = button_to post_likes_path(@post) do
           =icon('far', 'thumbs-up')
           いいね
+    .comments__like-count
+      =icon('far', 'thumbs-up')
+      = @post.likes.count
+
     .comments__form
       = form_with(model: [@post, @comment], local: true) do |form|
         = form.text_area :content, placeholder: "コメントする", rows: "4"
