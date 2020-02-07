@@ -11,3 +11,20 @@
         = image_tag post.image1.url(:thumb)
     .contents__appeal
       = post.appeal
+
+.index_posts
+  ＜いいねした投稿一覧＞
+- @user.liked_posts.each do |post|
+  .contents.index
+    .contents__product-name
+      = post.product_name
+    .contents__image
+      = link_to "/posts/#{post.id}" do
+        = image_tag post.image1.url(:thumb)
+    .contents__appeal
+      = post.appeal
+    .contents__contributor
+      = post.user.store.name
+      店/
+      = post.user.name
+  
