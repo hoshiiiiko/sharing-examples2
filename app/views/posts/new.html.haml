@@ -3,24 +3,19 @@
 = form_with(model: @post, local: true) do |form|
   - if @post.confirming.blank?
     .post-form
-      商品名：
-      = form.text_field :product_name, placeholder: '商品名'
+      = form.text_field :product_name, placeholder: '商品名', id: "product-name"
       %br
-      売場写真：
-      = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image1'
-      = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image2'
-      = form.file_field :image3, accept: "image/png, image/jpeg", id: 'image3'
+      = form.file_field :image1, accept: "image/png, image/jpeg", id: 'image'
+      = form.file_field :image2, accept: "image/png, image/jpeg", id: 'image'
+      = form.file_field :image3, accept: "image/png, image/jpeg", id: 'image'
       %br
-      工夫したポイント：
       = form.text_area :point, placeholder: '工夫したポイントなど', id: 'point'
       %br
-      実績：
       = form.text_area :result, placeholder: '販売期間と実績（売上金額、PI値、ロス率、他店比較など）', id: 'result'
       %br
-      アピール文：
       = form.text_field :appeal, placeholder: 'アピール文（例）売上全店１位！', id: 'appeal'
       %br
-      = form.submit '確認画面へ'
+      = form.submit '確認画面へ', id: "btn"
   - else
     %p.comfirm
       以下の内容でよろしいですか？
@@ -54,6 +49,5 @@
         = form.hidden_field :point
         = form.hidden_field :result
         = form.hidden_field :appeal
-      .form-actions
-        = form.submit '送信する'
+        = form.submit '送信する', id: "btn"
     = form.hidden_field :confirming

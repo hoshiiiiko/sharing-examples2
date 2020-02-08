@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+$accent: #000066;
+$dark: #666;
+
 html, head, body {
   height: 100%;
 }
@@ -10,6 +13,7 @@ header {
   width: 100%;
   height: 60px;
   border-bottom: 1px solid #D8D8D8;
+  
   .header-contents {
     @include center;
     display: flex;
@@ -22,7 +26,10 @@ header {
       &--btn {
         padding-left: 2px;
         padding-right: 10px;
-        color: #666;
+        a:link { color: $dark; text-decoration:none }
+        a:visited { color: $dark; text-decoration:none }
+        a:hover { color: $dark; text-decoration:none }
+        a:active { color: $dark; text-decoration:none }
       }
     }
     &__right {
@@ -32,8 +39,11 @@ header {
         margin-left: 10px;
         padding: 8px 15px;
         font-size: 14px;
-        border: 2px solid #57C3E9;
-        color: #57C3E9;
+        border: 2px solid $accent;
+        a:link { color: $dark; text-decoration:none }
+        a:visited { color: $accent; text-decoration:none }
+        a:hover { color: $accent; text-decoration:none }
+        a:active { color: $accent; text-decoration:none }
         font-weight: bold;
         text-align: center;
         border-radius: 3px;
@@ -46,6 +56,7 @@ header {
   height: calc(100% - 60px);
   background-color: #f5f5f3;
   overflow: scroll;
+  padding-bottom: 30px;
 }
 
 .search-form {
@@ -65,11 +76,41 @@ header {
     margin-right: 20px;
     width: 140px;
     height: 47px;
-    background-color: #57C3E9;
+    background-color: $accent;
     border-radius: 20px;
     color: #fff;
     border: 0;
     font-size: 18px;
+  }
+}
+
+.post-form {
+
+  margin-top: 30px;
+  #product-name {
+    width: 660px;
+    height: 30px;
+  }
+  #point {
+    width: 660px;
+    height: 60px;
+  }
+  #result {
+    width: 660px;
+    height: 60px;
+  }
+  #appeal {
+    width: 660px;
+    height: 60px;
+  }
+  #btn {
+    margin: 30px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: $accent;
+    color: #FFFFFF;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }
 .index {
@@ -97,8 +138,18 @@ header {
     height: 15px;
     margin-right: 5px;
     text-align: right;
-    color: #666;
+    color: $dark;
   }
+}
+p {
+  @include center;
+  color: $dark;
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+.success {
+  @include center;
+  margin: 20px;
 }
 
 .title {
@@ -111,23 +162,35 @@ header {
   &__product-name {
     font-size: 1.6rem;
     padding-left: 10px;
-    color: #666;
+    color: $dark;
   }
   &__contributor {
     padding-right: 10px;
     font-size: 1rem;
-    color: #666;
+    color: $dark;
   }
+}
+.form-inputs {
+  @include center;
+}
+#btn {
+  margin: 30px;
+  width: 600px;
+  border-radius: 20px;
+  background-color: $accent;
+  color: #FFFFFF;
+  height: 40px;
+  font-size: 1.2rem;
 }
 
 .show-contents {
   &__images {
     &--main {
-      border: 1px solid #666;
+      border: 1px solid $dark;
     }
     &--sub {
       display: flex;
-      border: 1px solid #666;
+      border: 1px solid $dark;
 
     }
   }
@@ -142,10 +205,11 @@ header {
     padding-top: 10px;
   }
   &__appeal {
-    background-color: #FFFFFF;
-    font-size: 2.3rem;
+    background-color: #FFD5EC;
+    font-size: 2.2rem;
+    color: $dark;
     text-align: center;
-    border: 1px solid #666;
+    border: 1px solid $dark;
   }
 }
 
@@ -156,6 +220,42 @@ header {
   box-shadow: 0 0 10px rgba(41,41,41,0.2);
   background-color: white;
   box-sizing: border-box;
+  &__like {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin-bottom: 10px;
+    &--btn {
+      display: block;
+      width: 150px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: $accent;
+      color: #FFFFFF;
+    }
+    &--count {
+      padding-left: 10px;
+      font-size: 1.1rem;
+    }
+  }
+  &__form {
+    &--textbox {
+      width: 600px;
+      height: 70px;
+    }
+    &--btn {
+      width: 600px;
+      border-radius: 20px;
+      background-color: $accent;
+      color: #FFFFFF;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+  }
+  &__comment {
+    padding-top: 15px;
+    display: flex;
+  }
 }
 
 .post-form {

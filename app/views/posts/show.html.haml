@@ -25,27 +25,28 @@
     .show-contents__appeal
       = @post.appeal
   .comments
-    .comments__like-btn
+    .comments__like
       - if current_user.already_liked?(@post)
-        = button_to post_like_path(@post), method: :delete do
+        = button_to post_like_path(@post), method: :delete, class: "comments__like--btn" do
           =icon('far', 'thumbs-up')
           いいねを取り消す
       - else
-        = button_to post_likes_path(@post) do
+        = button_to post_likes_path(@post), class: "comments__like--btn" do
           =icon('far', 'thumbs-up')
           いいね
-    .comments__like-count
-      =icon('far', 'thumbs-up')
-      = @post.likes.count
+      .comments__like--count
+        =icon('far', 'thumbs-up')
+        = @post.likes.count
 
     .comments__form
       = form_with(model: [@post, @comment], local: true) do |form|
-        = form.text_area :content, placeholder: "コメントする", rows: "4"
-        = form.submit "SEND"
+        = form.text_area :content, placeholder: "コメントする", rows: "4", class: "comments__form--textbox"
+        = form.submit "コメントする", class: "comments__form--btn"
     .comments__comment
       - if @comments
         - @comments.each do |comment|
           .comments__comment--user-name
             = comment.user.name
+            ：
           .comments__comment--text
             = comment.content
