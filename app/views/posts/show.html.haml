@@ -41,7 +41,7 @@
     .comments__form
       = form_with(model: [@post, @comment], local: true) do |form|
         = form.text_area :content, placeholder: "コメントする", rows: "4", class: "comments__form--textbox"
-        = form.submit "SEND", class: "comments__form--btn"
+        = form.submit "コメントする", class: "comments__form--btn"
     .comments__comment
       - if @comments
         - @comments.each do |comment|
