@@ -26,6 +26,7 @@ header {
       &--btn {
         padding-left: 2px;
         padding-right: 10px;
+        a:link { color: $dark; text-decoration:none }
         a:visited { color: $dark; text-decoration:none }
         a:hover { color: $dark; text-decoration:none }
         a:active { color: $dark; text-decoration:none }
@@ -39,6 +40,7 @@ header {
         padding: 8px 15px;
         font-size: 14px;
         border: 2px solid $accent;
+        a:link { color: $dark; text-decoration:none }
         a:visited { color: $accent; text-decoration:none }
         a:hover { color: $accent; text-decoration:none }
         a:active { color: $accent; text-decoration:none }
