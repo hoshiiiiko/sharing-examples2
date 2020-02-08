@@ -82,6 +82,36 @@ header {
     font-size: 18px;
   }
 }
+
+.post-form {
+
+  margin-top: 30px;
+  #product-name {
+    width: 660px;
+    height: 30px;
+  }
+  #point {
+    width: 660px;
+    height: 60px;
+  }
+  #result {
+    width: 660px;
+    height: 60px;
+  }
+  #appeal {
+    width: 660px;
+    height: 60px;
+  }
+  #btn {
+    margin: 30px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: $accent;
+    color: #FFFFFF;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
 .index {
   margin-top: 30px;
 }
@@ -110,6 +140,12 @@ header {
     color: $dark;
   }
 }
+p {
+  @include center;
+  color: $dark;
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
 
 .title {
   @include center;
@@ -128,6 +164,18 @@ header {
     font-size: 1rem;
     color: $dark;
   }
+}
+.form-inputs {
+  @include center;
+}
+#btn {
+  margin: 30px;
+  width: 600px;
+  border-radius: 20px;
+  background-color: $accent;
+  color: #FFFFFF;
+  height: 40px;
+  font-size: 1.2rem;
 }
 
 .show-contents {
